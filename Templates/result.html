@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: Arial; background: #eef2f3; padding: 30px; }
+        .box {
+            width: 450px; margin: auto; background: white; padding: 25px;
+            border-radius: 10px; text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .good { color: green; font-size: 26px; font-weight: bold; }
+        .bad { color: red; font-size: 26px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    {% if result == "Diabetes Detected" %}
+        <p class="bad">{{ result }}</p>
+    {% else %}
+        <p class="good">{{ result }}</p>
+    {% endif %}
+
+    <p>Probability: <b>{{ prob }}%</b></p>
+
+    <a href="/"><button style="padding:10px 20px;">Check Again</button></a>
+</div>
+
+</body>
+</html>
